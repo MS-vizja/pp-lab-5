@@ -1,16 +1,34 @@
 import company.implementations.EmailMessenger;
 import company.interfaces.Messenger;
 import company.utils.MathUtils;
+import company.beans.Person;
 
 public class Main {
     public static void main(String[] args) {
         
-        int sum = MathUtils.add(10, 21);
-        
-        System.out.println("Wynikiem dodawania 10 + 21 jest: " + sum);
-        
-        
-        Messenger messenger = new EmailMessenger();
-        messenger.sendMessage("Wynikiem dodawania 10 + 21 jest: " + sum);
+        Person[] people = new Person[5];
+
+       
+        final int b = 10;
+
+        try {
+           
+            people[0] = new Person("John Doe", 30);
+            people[1] = new Person("John Cena", 26);
+            people[2] = new Person("Johnny Deep", 25);
+            people[3] = new Person("John Lennon", 22);
+            people[4] = new Person("John Wayne", 29);
+
+            
+            Messenger messenger = new EmailMessenger();
+
+            
+            for (Person person : people) {
+                int agePlusB = MathUtils.add(person.getAge(), b);
+                messenger.sendMessage(person.getName() + " bedzie mial " + agePlusB + " lat za " + b + " lat.");
+            }
+        } catch (Exception e) {
+            System.out.println("Blad: " + e.getMessage());
+        }
     }
 }
