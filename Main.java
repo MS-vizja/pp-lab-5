@@ -14,10 +14,10 @@ public class Main {
         try {
            
             people[0] = new Person("John Doe", 30);
-            people[1] = new Person("John Cena", 26);
-            people[2] = new Person("Johnny Deep", 25);
+            people[1] = new Person("John Cena", 47);
+            people[2] = new Person("Johnny Deep", 60);
             people[3] = new Person("John Lennon", 22);
-            people[4] = new Person("John Wayne", 29);
+            people[4] = new Person("John Wayne", 72);
 
             
             Messenger messenger = new EmailMessenger();
